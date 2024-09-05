@@ -1,57 +1,22 @@
-
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Game La Patrona</title>
+    <title>La Patrona</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
-<h1>La Patrona</h1>
-<div id="game-container">
-    <h1>Text Adventure Game</h1>
-    <div id="game-output">
-        <!-- O texto do jogo será exibido aqui -->
+<div class="container">
+    <h1 class="game-title">La Patrona</h1>
+    <div class="text-area" id="game-text">
+        <p>Bem-vindo ao jogo La Patrona! Digite seu comando abaixo.</p>
     </div>
-    <input type="text" id="user-input" placeholder="Digite seu comando aqui">
-    <button onclick="sendCommand()">Enviar</button>
+    <div class="input-area">
+        <input type="text" id="command-input" placeholder="Digite seu comando..." />
+        <button id="send-button">Enviar</button>
+    </div>
 </div>
-
 <script src="script.js"></script>
-<!--<form action="/submit" method="post">-->
-<!--    <label for="email">E-mail:</label>-->
-<!--    <input type="email" id="email" name="email" required>-->
-<!--    <br><br>-->
-<!--    <label for="message">Mensagem:</label>-->
-<!--    <textarea id="message" name="message" rows="4" cols="50" required></textarea>-->
-<!--    <br><br>-->
-<!--    <button type="submit">Enviar</button>-->
-<!--</form>-->
 </body>
-
-function sendCommand() {
-const userInput = document.getElementById('user-input').value;
-
-fetch('/process-command', {
-method: 'POST',
-headers: {
-'Content-Type': 'application/json'
-},
-body: JSON.stringify({ command: userInput })
-})
-.then(response => response.json())
-.then(data => {
-const gameOutput = document.getElementById('game-output');
-gameOutput.innerHTML += `<p>${data.response}</p>`;
-document.getElementById('user-input').value = '';
-})
-.catch(error => console.error('Error:', error));
-}
-
 </html>
-
-
