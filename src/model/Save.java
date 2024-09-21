@@ -1,4 +1,4 @@
-package classes;
+package src.model;
 
 public class Save {
 
@@ -34,5 +34,14 @@ public class Save {
 
     public void setJogador(Integer jogador) {
         this.jogador = jogador;
+    }
+
+    @Override
+    public String toString() {
+        return "Save{" +
+                "id_save=" + id_save +
+                ", Id_fase=" + Id_fase +
+                ", jogador=" + jogador +
+                '}';
     }
 }

@@ -1,4 +1,4 @@
-package classes;
+package src.model;
 
 public class Fases {
 
@@ -45,4 +45,15 @@ public class Fases {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    @Override
+    public String toString() {
+        return "Fases{" +
+                "id_fase=" + id_fase +
+                ", id_historia=" + id_historia +
+                ", numero=" + numero +
+                ", descricao='" + descricao + '\'' +
+                '}';
+    }
 }
+

@@ -1,4 +1,4 @@
-package classes;
+package src.model;
 
 public class Opcoes {
 
@@ -44,5 +44,15 @@ public class Opcoes {
 
     public void setDestino(Integer destino) {
         this.destino = destino;
+    }
+
+    @Override
+    public String toString() {
+        return "Opcoes{" +
+                "id_opcoes=" + id_opcoes +
+                ", id_fase=" + id_fase +
+                ", opcao='" + opcao + '\'' +
+                ", destino=" + destino +
+                '}';
     }
 }
