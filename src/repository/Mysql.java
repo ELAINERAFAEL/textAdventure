@@ -11,9 +11,9 @@ public class Mysql {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(
-                    "documentos/tads/TerceiroPeriodo/techacacademy3/BancoDeDados",
+                    "jdbc:mysql://localhost:3306/textadventure",
                     "root",
-                    "123456"
+                    ""
             );
             return connection;
         } catch (SQLException e) {
