@@ -4,12 +4,10 @@ public class Save {
 
     private Integer id_save;
     private Integer Id_fase;
-    private Integer jogador;
+    private String jogador;
 
-    public Save(Integer id_save, Integer id_fase, Integer jogador) {
-        this.id_save = id_save;
-        Id_fase = id_fase;
-        this.jogador = jogador;
+    public Save() {
+
     }
 
     public Integer getId_save() {
@@ -28,11 +26,11 @@ public class Save {
         Id_fase = id_fase;
     }
 
-    public Integer getJogador() {
+    public String getJogador() {
         return jogador;
     }
 
-    public void setJogador(Integer jogador) {
+    public void setJogador(String jogador) {
         this.jogador = jogador;
     }
 

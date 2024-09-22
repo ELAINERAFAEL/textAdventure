@@ -7,11 +7,8 @@ public class Opcoes {
     private String opcao;
     private Integer destino;
 
-    public Opcoes(Integer id_opcoes, Integer id_fase, String opcao, Integer destino) {
-        this.id_opcoes = id_opcoes;
-        this.id_fase = id_fase;
-        this.opcao = opcao;
-        this.destino = destino;
+    public Opcoes() {
+
     }
 
     public Integer getId_opcoes() {
