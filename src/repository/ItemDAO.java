@@ -1,7 +1,8 @@
-package repository;
+package src.repository;
 
-import model.Cena;
-import model.Item;
+import repository.CenaDAO;
+import src.model.Cena;
+import src.model.Item;
 
 import java.sql.*;
 import java.util.ArrayList;

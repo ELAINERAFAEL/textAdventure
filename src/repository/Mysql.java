@@ -1,4 +1,4 @@
-package repository;
+package src.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,16 +11,15 @@ public class Mysql {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(
-                    "documentos/tads/TerceiroPeriodo/techacacademy3/BancoDeDados",
+                    "jdbc:mysql://localhost3306/Textadventure",
                     "root",
-                    "123456"
+                    ""
             );
             return connection;
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            System.out.println("Erro ao tentar connectar com o banco.");
+            System.out.println("erro ao tentar  conectar");
         } catch (ClassNotFoundException e) {
-            System.out.println("Erro ao tentar importar o driver mysql");
+            System.out.println("erro ao importar drive");
         }
         return null;
     }

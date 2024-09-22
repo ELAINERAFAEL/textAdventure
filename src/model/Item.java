@@ -1,13 +1,7 @@
-package model;
-
-public class Item {
+package src.model;public class Item {
     private Integer idItem;
     private String nome;
-    private String descricaoPositiva;
-    private String descricaoNegativa;
-    private String comandoCorreto;
-    private Cena cenaAtual;
-    private Cena cenaDestino;
+    private String descricao;
 
     public Integer getIdItem() {
         return idItem;
@@ -25,44 +19,12 @@ public class Item {
         this.nome = nome;
     }
 
-    public String getDescricaoPositiva() {
-        return descricaoPositiva;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescricaoPositiva(String descricaoPositiva) {
-        this.descricaoPositiva = descricaoPositiva;
-    }
-
-    public String getDescricaoNegativa() {
-        return descricaoNegativa;
-    }
-
-    public void setDescricaoNegativa(String descricaoNegativa) {
-        this.descricaoNegativa = descricaoNegativa;
-    }
-
-    public String getComandoCorreto() {
-        return comandoCorreto;
-    }
-
-    public void setComandoCorreto(String comandoCorreto) {
-        this.comandoCorreto = comandoCorreto;
-    }
-
-    public Cena getCenaAtual() {
-        return cenaAtual;
-    }
-
-    public void setCenaAtual(Cena cenaAtual) {
-        this.cenaAtual = cenaAtual;
-    }
-
-    public Cena getCenaDestino() {
-        return cenaDestino;
-    }
-
-    public void setCenaDestino(Cena cenaDestino) {
-        this.cenaDestino = cenaDestino;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     @Override
@@ -70,11 +32,12 @@ public class Item {
         return "Item{" +
                 "idItem=" + idItem +
                 ", nome='" + nome + '\'' +
-                ", descricaoPositiva='" + descricaoPositiva + '\'' +
-                ", descricaoNegativa='" + descricaoNegativa + '\'' +
-                ", comandoCorreto='" + comandoCorreto + '\'' +
-                ", cenaAtual=" + cenaAtual +
-                ", cenaDestino=" + cenaDestino +
+                ", descricao='" + descricao + '\'' +
                 '}';
     }
+
+    public void setCenaAtual(Cena cenaAtual) {
+    }
 }
+
+

@@ -1,6 +1,7 @@
 package repository;
 
-import model.Cena;
+import src.model.Cena;
+import src.repository.Mysql;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,7 +14,7 @@ import java.util.List;
 public class CenaDAO {
     public static Cena findCenaById(Integer id) throws SQLException {
         Connection conn = Mysql.getConnection();
-        String sql = "SELECT * FROM cenas WHERE id_cena = ?";
+        String sql = "SELECT * FROM cena WHERE id_cena = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setInt(1, id);
         ResultSet rs = stmt.executeQuery();
@@ -30,7 +31,7 @@ public class CenaDAO {
 
     public static void insertCena(Cena cena) throws SQLException {
         Connection connection = Mysql.getConnection();
-        String insert = "INSERT INTO cenas(descricao) VALUES (?);";
+        String insert = "INSERT INTO cena (descricao) VALUES (?);";
         PreparedStatement ps = connection.prepareStatement(insert);
         ps.setString(1, cena.getDescricao());
         ps.execute();
@@ -42,15 +43,15 @@ public class CenaDAO {
         PreparedStatement ps = connection.prepareStatement(sql);
         ResultSet resultSet = ps.executeQuery();
 
-        List<Cena> cenas = new ArrayList<>();
+        List<Cena> Cena = new ArrayList<>();
         while (resultSet.next()) {
             Cena cena = new Cena();
             cena.setIdCena(resultSet.getInt("id_cena"));
             cena.setDescricao(resultSet.getString("descricao"));
 
-            cenas.add(cena);
+            cena.add(cena);
         }
-        return cenas;
+        return Cena;
     }
 
 }
