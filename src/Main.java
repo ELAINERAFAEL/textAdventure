@@ -1,7 +1,10 @@
+package src;
+
 import model.Cena;
 import model.Item;
 import repository.CenaDAO;
 import repository.ItemDAO;
+import src.model.Cena;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -20,7 +23,7 @@ public class Main {
             System.out.println(cenas);
 
             Cena novaCena = new Cena();
-            novaCena.setDescricao("Nova cena que foi inserida pelo java brabíssimo");
+            novaCena.setDescricao("Nova cena");
             CenaDAO.insertCena(novaCena);
 
             cenas = CenaDAO.findAll();

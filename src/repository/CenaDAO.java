@@ -1,7 +1,6 @@
-package repository;
+package src.repository;
 
-import src.model.Cena;
-import src.repository.Mysql;
+import model.Cena;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +9,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-// Data Access Object
 public class CenaDAO {
     public static Cena findCenaById(Integer id) throws SQLException {
         Connection conn = Mysql.getConnection();
@@ -31,7 +29,7 @@ public class CenaDAO {
 
     public static void insertCena(Cena cena) throws SQLException {
         Connection connection = Mysql.getConnection();
-        String insert = "INSERT INTO cena (descricao) VALUES (?);";
+        String insert = "INSERT INTO cenas(descricao) VALUES (?);";
         PreparedStatement ps = connection.prepareStatement(insert);
         ps.setString(1, cena.getDescricao());
         ps.execute();
@@ -43,15 +41,15 @@ public class CenaDAO {
         PreparedStatement ps = connection.prepareStatement(sql);
         ResultSet resultSet = ps.executeQuery();
 
-        List<Cena> Cena = new ArrayList<>();
+        List<Cena> cenas = new ArrayList<>().reversed();
         while (resultSet.next()) {
             Cena cena = new Cena();
             cena.setIdCena(resultSet.getInt("id_cena"));
             cena.setDescricao(resultSet.getString("descricao"));
 
-            cena.add(cena);
+            cenas.add(cena);
         }
-        return Cena;
+        return cenas;
     }
 
 }

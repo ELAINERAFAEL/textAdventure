@@ -21,16 +21,17 @@
         <button id="send-button">Enviar</button>
     </div>
     <main>
-        <div class="console-box">
-            <p><?= htmlspecialchars($arrayAssociativo->mensagem) ?></p>
-        </div>
-        <div class="form-group">
-            <form method="get" action="">
-                <input type="text" name="comando"/>
-                <input type="text" name="save" value="<?= htmlspecialchars($arrayAssociativo->idSave) ?>" readonly/>
-                <input type="submit"/>
-            </form>
-        </div>
+       <div class="console-box">
+           <p><?= $mensagem ?></p>
+       </div>
+       <div class="form-group">
+           <form method="get" action="">
+               <input type="text" name="comando" placeholder="Digite seu comando aqui.."/>
+               <input type="text" name="save" value="<?= $idSave ?>" readonly/>
+               <input type="submit" value="Enviar"/>
+           </form>
+       </div>
+
     </main>
 </div>
 <script src="script.js"></script>
